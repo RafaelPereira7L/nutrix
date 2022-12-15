@@ -1,0 +1,64 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>Nutrix_DIETAS_E_ACOMPANHAMENTO_CSHARP</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Views\Usuarios\Login\NewFolder\**" />
+    <Compile Remove="wwwroot\NewFolder\**" />
+    <Content Remove="Views\Usuarios\Login\NewFolder\**" />
+    <Content Remove="wwwroot\NewFolder\**" />
+    <EmbeddedResource Remove="Views\Usuarios\Login\NewFolder\**" />
+    <EmbeddedResource Remove="wwwroot\NewFolder\**" />
+    <None Remove="Views\Usuarios\Login\NewFolder\**" />
+    <None Remove="wwwroot\NewFolder\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\assets\arrow-left.png" />
+    <None Include="wwwroot\assets\background-login.jpeg" />
+    <None Include="wwwroot\assets\background-login.png" />
+    <None Include="wwwroot\assets\background-login.svg" />
+    <None Include="wwwroot\assets\calculator-icon.png" />
+    <None Include="wwwroot\assets\closed-menu-icon.png" />
+    <None Include="wwwroot\assets\diet-icon.png" />
+    <None Include="wwwroot\assets\edit-document-icon.png" />
+    <None Include="wwwroot\assets\email-icon.svg" />
+    <None Include="wwwroot\assets\head-icon.svg" />
+    <None Include="wwwroot\assets\house-icon.png" />
+    <None Include="wwwroot\assets\info-icon.png" />
+    <None Include="wwwroot\assets\logo.png" />
+    <None Include="wwwroot\assets\new-icon.png" />
+    <None Include="wwwroot\assets\opened-menu-icon.png" />
+    <None Include="wwwroot\assets\reload-icon.png" />
+    <None Include="wwwroot\assets\report-icon.png" />
+    <None Include="wwwroot\assets\timeline-icon.png" />
+    <None Include="wwwroot\assets\user-icon.png" />
+    <None Include="wwwroot\css\footer.css" />
+    <None Include="wwwroot\css\header.css" />
+    <None Include="wwwroot\css\Login.css" />
+    <None Include="wwwroot\css\menu_lateral.css" />
+    <None Include="wwwroot\js\menu_lateral.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.10">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Views\CodigoAManejar\script\" />
+    <Folder Include="Views\PaginasPendentes\" />
+  </ItemGroup>
+
+</Project>

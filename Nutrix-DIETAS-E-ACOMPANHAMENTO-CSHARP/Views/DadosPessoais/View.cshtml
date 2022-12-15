@@ -1,0 +1,69 @@
+﻿@model Nutrix_DIETAS_E_ACOMPANHAMENTO_CSHARP.Models.DadoPessoal
+
+@{
+    ViewData["Title"] = "Dados pessoais";
+}
+
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="~/css/Perfil.css" asp-append-version="true" />
+    <title>Nutrix Dietas e Acompanhamento </title>
+
+
+</head>
+<body>
+    <main>
+        <div>
+            <h1 id="titulo">Dados Pessoais</h1>
+        </div>
+
+
+        <fieldset class="grupo1">
+
+            <h2 id="titulo2">
+                <img src="../../assets/edit-document-icon.png">
+                <div class="title2">
+                    Dados para edição do perfil
+                </div>
+            </h2>
+
+
+                <form asp-action="CreateDadoPessoal">
+                    <div class="text-danger">Preencha os dados pessoais para gerar a dieta</div>
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                        <label>O seu peso (Kg)</label>
+                        <input asp-for="Peso" />
+                        <span asp-validation-for="Peso" class="text-danger"></span>
+                  
+                        <label>A sua altura (cm)</label>
+                        <input asp-for="Altura" />
+                        <span asp-validation-for="Altura" class="text-danger"></span>
+
+
+                        <label>Frequência Atividade Física</label>
+                        <select asp-for="Tipo" asp-items="Html.GetEnumSelectList<FrequenciaAtvFisica>()"></select>
+                        <span asp-validation-for="Tipo" class="text-danger"></span>
+
+
+                    <button class="btn" type="submit">
+                        <div>Salvar</div>
+                    </button>
+                </form>
+
+
+        </fieldset>
+    </main>
+</body>
+
+
+
+</html>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }
+
+

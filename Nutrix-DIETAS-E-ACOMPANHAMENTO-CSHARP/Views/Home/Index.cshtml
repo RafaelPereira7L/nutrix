@@ -1,0 +1,111 @@
+﻿@model IEnumerable<Nutrix_DIETAS_E_ACOMPANHAMENTO_CSHARP.Models.Dieta>
+
+@{
+    ViewData["Title"] = "HomePage";
+}
+
+<html lang="pt-br">
+
+<head>
+    <link rel="stylesheet" href="~/css/Home.css" asp-append-version="true" />
+    <title>Nutrix Dietas e Acompanhamento </title>
+</head>
+
+<body>
+
+    <main>
+        <h1 class="main-title">
+            Bem-Vindo, @User.Identity.Name
+        </h1>
+        <nav>
+            <div class="block">
+                <div class="new-diet">
+                    <div class="new-diet-header">
+                        <img src="../../assets/new-icon.png" alt="ícone new">
+                        <h2>Novas dietas cadastradas!</h2>
+                        <div></div>
+                    </div>
+
+
+                    <div class="new-diet-content">
+                        @{
+
+
+                        if(Model.Count() <= 0) {
+
+                                <div class="new-diet-card">
+                                    <img src="../../assets/new-icon.png" alt="ícone new">
+                                    <p>Não há dietas cadastradas</p>
+                                </div>
+                        } else {
+                                foreach (Dieta dieta in Model)
+                                {
+
+                                    <div class="new-diet-card">
+                                        <img src="../../assets/diet-icon.png" alt="ícone new">
+                                        <p>@dieta.TituloDieta</p>
+                                    </div>
+
+                                }
+                        }
+
+                    }
+                    </div>
+
+                </div>
+
+
+                <form asp-action="WaterCalc" class="last-att">
+                    <div class="last-att-header">
+                        <img src="../../assets/reload-icon.png" alt="ícone new">
+                        <h2>Consumo de água</h2>
+                        <div></div>
+                    </div>
+                    <div class="calc-base-content">
+                        <p>Clique abaixo para calcular o consumo de água ideal por dia</p>
+                        <div class="bottom">
+                            <div></div>
+                            <button class="visualizar" type="submit" >
+                                <p>Calcular</p>
+                            </button>
+                            <div></div>
+                        </div>
+                    </div>
+                </form>
+
+
+
+                <div class="calc-base">
+                    <div class="calc-base-header">
+                        <img src="../../assets/calculator-icon.png" alt="ícone new">
+                        <h2>Base de cálculo</h2>
+                        <div></div>
+                    </div>
+                    <div class="calc-base-content">
+                        <p>Deseja visualizar a base de cálculo utilizada nas dietas? Basta clicar abaixo</p>
+                        <div class="bottom">
+                            <div></div>
+                            <div class="visualizar">
+                                <p>Visualizar</p>
+                            </div>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hint">
+                    <div class="hint-header">
+                        <img src="../../assets/info-icon.png" alt="ícone new">
+                        <h2>Dica:</h2>
+                        <div></div>
+                    </div>
+                    <div class="hint-content">
+                        <p>Verifique sempre seu cadastro de usuário para geração correta da dieta</p>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </main>
+
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+/* Header Content */
+.header {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   background-color: #005C53;
+   padding-top: 1px;
+   padding-bottom: 1px;
+   padding-right: 1rem;
+   padding-left: 1rem;
+}
+.header > h1 {
+   display: inline;
+   color: #ECF9E6;
+}
+.header > .menu-icon {
+   width: 30px;
+   cursor: pointer;
+}
+.header > .user-content > img {
+   width: 31px;
+   cursor: pointer;
+}
+.user-content {
+   display: flex;
+   align-items: center;
+   gap: 0.5rem;
+   color: #ECF9E6;
+}

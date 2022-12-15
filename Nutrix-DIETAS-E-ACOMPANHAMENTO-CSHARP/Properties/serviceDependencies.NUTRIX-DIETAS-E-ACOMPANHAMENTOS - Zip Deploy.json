@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "secretStore": "AzureAppSettings",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/nutrix-dietas-e-acompanhamento-csharpdbserver/databases/Nutrix-DIETAS-E-ACOMPANHAMENTO-CSHARP_db",
+      "type": "mssql.azure",
+      "connectionId": "nutrix"
+    }
+  }
+}

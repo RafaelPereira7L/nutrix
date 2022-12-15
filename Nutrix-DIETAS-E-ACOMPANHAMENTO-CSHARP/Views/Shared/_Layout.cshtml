@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Nutrix Dietas e Acompanhamentos</title>
+    <link rel="icon" href="~/Views/Assets/head-icon.svg" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/header.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/menu_lateral.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/footer.css" asp-append-version="true" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+
+    @if (User.Identity.IsAuthenticated) {
+
+    <header class="header">
+
+        <!-- Rever -->
+        <img id="menubtn" class="menu-icon" src="~/assets/opened-menu-icon.png" alt="btn-menu"
+            onclick="toggleBtnState()" />
+        <!-- Rever -->
+
+        <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Nutrix</a>
+
+        <div class="user-content" onclick="openPerfilMenu()">
+            <p>@User.Identity.Name</p>
+            <img src="~/assets/user-icon.png" alt="user">
+
+            <div class="user-options">
+                <a class="user-option" asp-area="" asp-controller="Usuarios" asp-action="Logout">
+                    <img src="~/assets/loggof-icon.png" alt="loggof">
+                    <p>Sair</p>
+                </a>
+
+            </div>
+        </div>
+
+
+    </header>
+
+        <nav class="navbar" id="navbar">
+
+            <a class="nav-item" asp-area="" asp-controller="Home" asp-action="Index">
+                <img src="~/assets/house-icon.png" alt="">
+                <p class="text-icon">Home</p>
+            </a>
+
+            <a class="nav-item" asp-area="" asp-controller="Dietas" asp-action="DietasForm">
+                <img src="~/assets/diet-icon.png" alt="">
+                <p class="text-icon1">Nova Dieta</p>
+            </a>
+
+            <a class="nav-item" asp-area="" asp-controller="DadoPessoais" asp-action="DadosForm">
+                <img src="~/assets/edit-document-icon.png" alt="documento-icone">
+                <p class="text-icon2">Dados Pessoais</p>
+            </a>
+            
+            <a class="nav-item" asp-area="" asp-controller="Usuarios" asp-action="Edit">
+                <img src="~/assets/user-icon.png" alt="perfil-icone">
+                <p class="text-icon3">Editar Perfil</p>
+            </a>
+            <a class="nav-item" asp-area="" asp-controller="Timeline" asp-action="Index">
+                <img src="~/assets/timeline-icon.png" alt="timeline-icone">
+                <p class="text-icon4">Linha do tempo</p>
+            </a>
+        <a class="nav-item" asp-area="" asp-controller="Relatorios" asp-action="Index">
+                <img src="~/assets/report-icon.png" alt="report-icone">
+                <p class="text-icon5">Relatórios</p>
+            </a>
+
+        </nav>
+
+
+
+        
+    }
+    
+    <div role="main" class="content">
+        @RenderBody()
+
+    </div>
+
+
+    @if (User.Identity.IsAuthenticated) {
+        <footer>
+            <img class="footer-img" src="~/assets/logo.png" alt="logo Nutrix">
+            <div class="footer-text">
+                <p class="email-nutrix">
+                <img class="img-email" src="~/assets/email-icon.svg" alt="">
+                    NutrixDietas@gmail.com
+                </p>
+                <p>copyright Todos os direitos reservados</p>
+                <p>Desenvolvido por alunos da PUC MINAS - 2022</p>
+            </div>
+            <div class="wrapper">
+            </div>
+        </footer>
+    }
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/menu_lateral.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</html>

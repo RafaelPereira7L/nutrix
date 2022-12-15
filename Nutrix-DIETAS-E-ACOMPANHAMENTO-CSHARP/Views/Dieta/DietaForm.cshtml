@@ -1,0 +1,72 @@
+@model Nutrix_DIETAS_E_ACOMPANHAMENTO_CSHARP.Models.Dieta
+
+@{
+    ViewData["Title"] = "Formulário da Dieta";
+}
+
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="~/css/Perfil.css" asp-append-version="true" />
+    <title>Nutrix Dietas e Acompanhamento </title>
+
+
+</head>
+<body>
+
+    <main>
+
+        <div>
+            <h1 id="titulo">Informações da Dieta</h1>
+        </div>
+
+
+        <fieldset class="grupo1">
+
+            <h2 id="titulo2">
+                <img src="../../assets/edit-document-icon.png">
+                <div class="title2">
+                    Informe os dados para geração da dieta
+                </div>
+            </h2>
+
+            <form asp-action="DietaSelector">
+                <label asp-for="TituloDieta">
+                    Título da Dieta
+                </label>
+                <span asp-validation-for="TituloDieta" class="text-danger"></span>
+                <input asp-for="TituloDieta" type="text" placeholder="Título da dieta">
+
+                <label asp-for="NumeroRefeicoes">
+                    Número das refeições
+                </label>
+                <span asp-validation-for="NumeroRefeicoes" class="text-danger"></span>
+                <input asp-for="NumeroRefeicoes" max="6" min="2" placeholder="Número das refeições">
+
+
+                <label asp-for="Objetivo" asp-for=" Objetivo">
+                    Objetivo da dieta
+                </label>
+                <span asp-validation-for="Objetivo" class="text-danger"></span>
+                <select id="sexobiologico" asp-for="Objetivo" asp-items="Html.GetEnumSelectList<ObjetivoDieta>()" placeholder="Numero das refeições"></select>
+
+
+
+                <button class="btn" type="submit">
+                    <div>Avançar</div>
+                </button>
+            </form>
+
+        </fieldset>
+
+
+
+    </main>
+
+
+</body>
+</html>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }
